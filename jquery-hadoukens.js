@@ -1,0 +1,45 @@
+<html>
+<head>
+  <style type="text/css">
+      #my-div {
+        width: 300px;
+        height: 300px;
+      }
+  </style>
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script>
+  $( document ).ready(function() {
+    $('#my-div').html('<img src="http://i.imgur.com/90Mmdcm.png">')
+    $('#my-div img').hover( function() {
+        this.src = 'http://i.imgur.com/nTj3Fxx.gif'
+    }, function() {
+        this.src = 'http://i.imgur.com/90Mmdcm.png'
+    })
+    $('#my-div img').mousedown( function() {
+        this.src = 'http://i.imgur.com/Rfj0a80.png' 
+    })
+    $('#my-div img').mousedown(function() {
+        $('.demo-hadouken').remove();
+    })
+    $('#my-div img').mousedown(function() {
+        $('#my-div').append(
+        '<img class="demo-hadouken" src="http://i.imgur.com/oTyQRvX.gif">'
+        );
+    })
+    $('#my-div img').mousedown(function() {
+        $('.demo-hadouken').animate( {
+            "margin-left": "600px"
+        }, 1000, 'swing', function() {
+            this.remove();
+        })
+    })
+    $('#my-div img').mouseup(function() {
+        this.src = 'http://i.imgur.com/90Mmdcm.png'
+    })
+  });
+  </script>
+</head>
+<body>
+    <div id="my-div"></div>
+</body>
+</html>
